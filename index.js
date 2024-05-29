@@ -16,8 +16,6 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 dotenv.config();
 
 mongoose.connect(process.env.CONN_STR, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
 }).then(() => {
   console.log("db connection successful");
 }).catch((err) => {
