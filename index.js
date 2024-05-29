@@ -10,12 +10,11 @@ const multer = require("multer");
 const path = require("path");
 const cors = require('cors');
 
-app.use(
-  cors({
-    origin: "https://blog-59i2.onrender.com/",
-    methods:['GET','PUT','DELETE','POST']
-  })
-);
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
