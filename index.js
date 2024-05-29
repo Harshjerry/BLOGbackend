@@ -15,13 +15,14 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 
 dotenv.config();
 
-mongoose.connect(process.env.CONN_STR,{
-  useNewUrlParser:true}).then((conn)=>{
-    // console.log(conn);
-    console.log("db connection succesful");
-  }).catch((err)=>{
-    console.log("errror occured while connection" );
-  })
+mongoose.connect(process.env.CONN_STR, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  console.log("db connection successful");
+}).catch((err) => {
+  console.error("error occurred while connecting to the database:", err);
+});
 
 
 const storage = multer.diskStorage({
