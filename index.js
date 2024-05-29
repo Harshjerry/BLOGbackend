@@ -13,6 +13,7 @@ const cors = require('cors');
 app.use(
   cors({
     origin: "https://blog-59i2.onrender.com/",
+    methods:['GET','PUT','DELETE','POST']
   })
 );
 
